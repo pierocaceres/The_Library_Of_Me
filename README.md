@@ -8,3 +8,5 @@ This is an application for readers to keep track of books they currently own or 
 ## Frontend
 
 ## Backend
+
+![The Library of Me ERD](./assets/The_Library_Of_Me_ERD.jpg)
