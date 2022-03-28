@@ -1,16 +1,21 @@
 import './style/App.css';
 import { Routes, Route } from 'react-router-dom'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import axios from 'axios'
 import DataContext from './component/DataContext'
 import Home from './page/Home'
+import Nav from './component/Nav'
 
 function App() {
+
+  const [signin, setSignin] = useState(false)
+  const [search, setSearch] = useState("")
+
   return (
     <div className="App">
-      <DataContext.Provider value={{}}>
+      <DataContext.Provider value={{signin, setSignin, search, setSearch}}>
       <header>
-
+        <Nav />
       </header>
 
       <main>
