@@ -39,7 +39,7 @@ const main = async() => {
         },
     ]
 
-    await Author.insertMany(/*functionName*/)
+    await Author.insertMany(authors)
     console.log('Created Authors')
 }
 

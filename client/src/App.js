@@ -1,6 +1,7 @@
-import '../style/App.css';
+import './style/App.css';
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
+import Home from './page/Home'
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
 
       <main>
         <Routes>
-          <Route path='/' />
+          <Route path='/' element={<Home />}/>
         </Routes>
       </main>
       
