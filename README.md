@@ -12,3 +12,6 @@ This is an application for readers to keep track of books they currently own or 
 ## Backend
 
 ![The Library of Me ERD](./assets/The_Library_Of_Me_ERD.jpg)
+
+## Development Progress
+The progress of this project will be monitored using [Trello.](https://trello.com/b/WrVjH1Kw/the-library-of-me)
