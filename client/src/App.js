@@ -9,11 +9,12 @@ import Nav from './component/Nav'
 function App() {
 
   const [signin, setSignin] = useState(false)
-  const [search, setSearch] = useState("")
-
+  const [searchField, setSearchField] = useState("")
+  const [search, setSearch] = useState(false)
+  
   return (
     <div className="App">
-      <DataContext.Provider value={{signin, setSignin, search, setSearch}}>
+      <DataContext.Provider value={{signin, setSignin, searchField, setSearchField, search, setSearch}}>
       <header>
         <Nav />
       </header>

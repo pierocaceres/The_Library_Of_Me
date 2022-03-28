@@ -35,4 +35,9 @@ header a.active{
   margin-right: 16px;
   font-size: 17px;
   border-bottom: 1px solid #000000;
+  width: 255px;
+}
+
+.radio-option input[type=radio] {
+  padding: 0 5px 0 5px;
 }

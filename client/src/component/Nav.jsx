@@ -4,16 +4,16 @@ import { DataContext } from './DataContext'
 
 function Nav() {
 
-    const {signin, setSignin } = useContext(DataContext)
+    const {signin} = useContext(DataContext)
 
     return (
         <div className="title-nav">
             <div className="website-title">
-                The Library of Me
+                <h1>The Library of Me</h1>
             </div>
             <div className="nav">
                 <Link to="/">Home</Link>
-                {!signin && <Link to="/signin">Signin</Link>}
+                {!signin && <Link to="/signin">Sign in</Link>}
                 {signin && <Link to="/:username/my_books">My Books</Link>}
             </div>
         </div>
