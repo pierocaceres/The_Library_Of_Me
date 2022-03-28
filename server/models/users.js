@@ -9,3 +9,5 @@ const Users = new Schema(
     },
     { timestamps: true }
 )
+
+module.exports = Users
