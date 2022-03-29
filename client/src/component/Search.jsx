@@ -11,13 +11,14 @@ function Search() {
     const getSearch = async () => {
         if (searchField !== '') {
             setSearch(true)
-            //console.log(searchField)
+
             if(radioOption === "Title"){
-                const result = await axios.get(`${BASE_URL}/find/${searchField}`)
+                const result = await axios.get(`${BASE_URL}/find/title/${searchField}`)
                 setResults(result.data.books)
                 console.log(results)
             }else if(radioOption === "Author"){
-                console.log(`Search by ${radioOption}`)
+                const result = await axios.get(`${BASE_URL}/find/author/${searchField}`)
+                setResults(result.data.books)
             }else if(radioOption === "Genre"){
                 console.log(`Search by ${radioOption}`)
             }
@@ -28,8 +29,14 @@ function Search() {
             setSearch(true)
             
             console.log(result.data.books) // Books were called from the database
-            console.log(results)
+            console.log(results) // setRestulrs seems to not do anything
         }
+
+        setSearchField("")
+        var ele = document.getElementsByName("search-type");
+        for(var i=0;i<ele.length;i++)
+           ele[i].checked = false;
+
     }
 
     const handleSearch = (event) => {

@@ -7,7 +7,7 @@ function Home() {
 
     const {search, results} = useContext(DataContext)
 
-    const DisplayResult = () => {
+    const showResults = () => {
         console.log(results)
         results.map((result) => (
             <DisplayResult key={result._id}
@@ -20,7 +20,7 @@ function Home() {
     return (
         <div>
             <Search />
-            {search && DisplayResult()}
+            {search && showResults()}
         </div>
     );
 }
