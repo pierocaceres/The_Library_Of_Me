@@ -18,14 +18,21 @@ function Home() {
     }
 
     useEffect( () => {
-
+        
     }, [])
 
     return (
         <div>
             <Search />
             <h3>Search Results</h3>
-            {search && showResults()}
+            {/* {search && showResults()} */}
+            {search && results.map((result) => (
+                // <p>{result.title}</p>
+                <DisplayResult key={result._id}
+                    title={result.title}
+                    image={result.book_cover}
+                />
+        ))}
         </div>
     );
 }
