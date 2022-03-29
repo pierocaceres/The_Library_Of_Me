@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { DataContext } from '../component/DataContext'
 import Search from '../component/Search';
 import DisplayResult from '../component/DisplayResult';
@@ -12,14 +12,19 @@ function Home() {
         results.map((result) => (
             <DisplayResult key={result._id}
                 title={result.title}
-                book_cover={result.book_cover}
+                image={result.book_cover}
             />
         ))
     }
 
+    useEffect( () => {
+
+    }, [])
+
     return (
         <div>
             <Search />
+            <h3>Search Results</h3>
             {search && showResults()}
         </div>
     );

@@ -22,14 +22,14 @@ function Search() {
             }else if(radioOption === "Genre"){
                 console.log(`Search by ${radioOption}`)
             }
-        }else if(searchField === "" && radioOption === ""){
+        }else if(searchField === ""){
             const result = await axios.get(`${BASE_URL}/find`)
             
-            setResults(result.data.books)
+            setResults(results => result.data.books)
             setSearch(true)
             
-            console.log(result.data.books) // Books were called from the database
-            console.log(results) // setRestulrs seems to not do anything
+            // console.log(result.data.books) // Books were called from the database
+            // console.log(results) // setRestulrs seems to not do anything
         }
 
         setSearchField("")

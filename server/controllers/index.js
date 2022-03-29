@@ -14,6 +14,7 @@ const gettAllBooks = async (req, res) => {
 const getBookByTitle = async (req, res) => {
     try{
         const books = await Book.find({title: req.params.title})
+        console.log(books)
         return res.status(200).json({books})
     }catch (err){
         return res.status(500).send(err.message)
@@ -23,9 +24,10 @@ const getBookByTitle = async (req, res) => {
 const getBookByAuthor = async (req, res) => {
     try{
         const author = await Author.find({name: req.params.author})
+        
         console.log(author)
-        const books = await Book.findById(author._id)
-        return res.status(200).json({author})
+        const books = await Book.find({author: author._id})
+        return res.status(200).json({books})
     }catch (err){
         return res.status(500).send(err.message)
     }
