@@ -1,23 +1,34 @@
 import React, { useContext } from 'react';
 import { DataContext } from './DataContext'
+import axios from 'axios';
 
 function Search() {
 
-    const {searchField, setSearchField, setSearch} = useContext(DataContext)
+    const {BASE_URL, searchField, setSearchField, setSearch, results, setResults} = useContext(DataContext)
 
     let radioOption = ""
 
     const getSearch = async () => {
         if (searchField !== '') {
             setSearch(true)
-            console.log(searchField)
+            //console.log(searchField)
             if(radioOption === "Title"){
-                console.log(`Search by ${radioOption}`)
+                const result = await axios.get(`${BASE_URL}/find/${searchField}`)
+                setResults(result.data.books)
+                console.log(results)
             }else if(radioOption === "Author"){
-                    console.log(`Search by ${radioOption}`)
+                console.log(`Search by ${radioOption}`)
             }else if(radioOption === "Genre"){
                 console.log(`Search by ${radioOption}`)
             }
+        }else if(searchField === "" && radioOption === ""){
+            const result = await axios.get(`${BASE_URL}/find`)
+            
+            setResults(result.data.books)
+            setSearch(true)
+            
+            console.log(result.data.books) // Books were called from the database
+            console.log(results)
         }
     }
 

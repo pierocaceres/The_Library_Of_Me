@@ -5,14 +5,25 @@ import DisplayResult from '../component/DisplayResult';
 
 function Home() {
 
-    const {search} = useContext(DataContext)
+    const {search, results} = useContext(DataContext)
+
+    const DisplayResult = () => {
+        console.log(results)
+        results.map((result) => (
+            <DisplayResult key={result._id}
+                title={result.title}
+                book_cover={result.book_cover}
+            />
+        ))
+    }
 
     return (
         <div>
             <Search />
-            {search && <DisplayResult /> }
+            {search && DisplayResult()}
         </div>
     );
 }
 
 export default Home;
+

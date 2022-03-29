@@ -41,3 +41,22 @@ header a.active{
 .radio-option input[type=radio] {
   padding: 0 5px 0 5px;
 }
+
+.card {
+  max-width: 300px;
+  max-height: 380px;
+  border-radius: 4px;
+  background-color: #62e979;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+}
+
+.card:hover {
+  opacity: 0.8;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+}
