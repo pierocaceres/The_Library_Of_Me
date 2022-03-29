@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import DataContext from '../component/DataContext';
 import axios from 'axios';
 
@@ -50,7 +50,7 @@ function Signin() {
                 password: <input type="password" name="password" placeholder="Enter your password" value={password} onChange={(event) => handlePassword(event)}/>
                 <br/>
             </div>
-            <button>Register</button>
+            <button onClick={navigate('/register')}>Register</button>
             <button onClick={confirmUser}>Sign in</button>            
         </div>
     );

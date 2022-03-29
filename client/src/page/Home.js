@@ -7,14 +7,14 @@ function Home() {
 
     const {search, results} = useContext(DataContext)
 
-    useEffect( () => {
+    // useEffect( () => {
         
-    }, [])
+    // }, [])
 
     return (
         <div>
             <Search />
-            <h3>Search Results</h3>
+            {search && <h3>Search Results</h3>}
             <div className="container-grid">
                 {search && results.map((result) => (
                     <DisplayResult key={result._id}

@@ -5,7 +5,8 @@ import axios from 'axios'
 import DataContext from './component/DataContext'
 import Nav from './component/Nav'
 import Home from './page/Home'
-import Signin from './page/Signin';
+import Signin from './page/Signin'
+import Signout from './page/Signout'
 
 const BASE_URL = 'http://localhost:3001/api'
 
@@ -28,6 +29,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/signin' element={<Signin />} />
+          <Route path='/signout' element={<Signout />}/>
+          {/* <Route path='/register' element={< />}/> */}
+          <Route path={`${user.username}/my_books`} />
         </Routes>
       </main>
       </DataContext.Provider>      
