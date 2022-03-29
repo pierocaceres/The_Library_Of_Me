@@ -25,6 +25,7 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<Home />}/>
+          <Route path='/signin' />
         </Routes>
       </main>
       </DataContext.Provider>      

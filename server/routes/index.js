@@ -7,5 +7,7 @@ router.get('/', (req, res) => res.send('The Library of Me Landing page'))
 router.get('/find', controllers.gettAllBooks)
 router.get('/find/title/:title', controllers.getBookByTitle)
 router.get('/find/author/:author', controllers.getBookByAuthor)
+router.get('/find/genre/:genre', controllers.getBookByGenre)
+
 
 module.exports = router

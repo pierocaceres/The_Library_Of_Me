@@ -17,10 +17,26 @@ function Search() {
                 setResults(result.data.books)
                 console.log(results)
             }else if(radioOption === "Author"){
-                const result = await axios.get(`${BASE_URL}/find/author/${searchField}`)
-                setResults(result.data.books)
+                const authorResult = await axios.get(`${BASE_URL}/find/author/${searchField}`)
+                const bookResult = await axios.get(`${BASE_URL}/find`)
+
+                const bookByAuthor = bookResult.data.books.filter(result => authorResult.data.author[0]._id === result.author)
+
+                setResults(bookByAuthor)
+                console.log(results)
+
             }else if(radioOption === "Genre"){
                 // AXIOS call for Genre
+                const genreResult = await axios.get(`${BASE_URL}/find/genre/${searchField}`)
+                const bookResult = await axios.get(`${BASE_URL}/find`)
+
+                console.log(bookResult)
+
+                // Loop through Genre of each book to see if it has the genre we are looking for
+
+                // const bookByGenre = bookResult.data.books.filter(result => genreResult.data.genre[0]._id === result.)
+
+                //setResults(bookByGenre)
             }
         }else if(searchField === ""){
             const result = await axios.get(`${BASE_URL}/find`)
@@ -30,10 +46,11 @@ function Search() {
         }
 
         setSearchField("")
+        
         var ele = document.getElementsByName("search-type");
-        for(var i=0;i<ele.length;i++)
-           ele[i].checked = false;
-
+        for(var i=0;i<ele.length;i++){
+            ele[i].checked = false;
+        }
     }
 
     const handleSearch = (event) => {
@@ -52,7 +69,7 @@ function Search() {
             </div>
             <br/>
             <div className="radio-option" onChange={(event) => handleRadio(event)}>
-                <input type="radio" name="search-type" value="Title"/>Title 
+                <input type="radio" name="search-type" value="Title" defaultChecked/>Title 
                 <input type="radio" name="search-type" value="Author"/>Author 
                 <input type="radio" name="search-type" value="Genre"/>Genre
             </div>
