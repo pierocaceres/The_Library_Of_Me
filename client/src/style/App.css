@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+/* Navigation */
+
 header{
   overflow: hidden;
   background-color: #e9e9e9;
@@ -27,6 +29,8 @@ header a.active{
   color: white;
 }
 
+/* Search Field and Radio Button */
+
 .search-field input[type=text] {
   /* float: right; */
   padding: 6px;
@@ -42,14 +46,26 @@ header a.active{
   padding: 0 5px 0 5px;
 }
 
-/* .card {
-  max-width: 300px;
+/* Card component */
+
+.container-grid {
+  padding: 2em 0;
+  display: grid;
+  grid-template-columns: repeat(4, 320px);
+  grid-gap: 1em;
+  /* justify-content: space-evenly; */
+}
+
+.card {
+  max-width: 200px;
   max-height: 380px;
   border-radius: 4px;
-  background-color: #62e979;
+  background-color: #6d6c6d;
   cursor: pointer;
   transition: all 0.2s;
   color: white;
+  align-content: center;
+  place-self: center;
 }
 
 .card:hover {
@@ -59,4 +75,4 @@ header a.active{
 .card img {
   width: 100%;
   height: 200px;
-} */
+}

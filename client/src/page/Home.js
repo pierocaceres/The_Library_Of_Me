@@ -7,16 +7,6 @@ function Home() {
 
     const {search, results} = useContext(DataContext)
 
-    const showResults = () => {
-        console.log(results)
-        results.map((result) => (
-            <DisplayResult key={result._id}
-                title={result.title}
-                image={result.book_cover}
-            />
-        ))
-    }
-
     useEffect( () => {
         
     }, [])
@@ -25,14 +15,14 @@ function Home() {
         <div>
             <Search />
             <h3>Search Results</h3>
-            {/* {search && showResults()} */}
-            {search && results.map((result) => (
-                // <p>{result.title}</p>
-                <DisplayResult key={result._id}
-                    title={result.title}
-                    image={result.book_cover}
-                />
-        ))}
+            <div className="container-grid">
+                {search && results.map((result) => (
+                    <DisplayResult key={result._id}
+                        title={result.title}
+                        image={result.book_cover}
+                    />
+                ))}
+            </div>
         </div>
     );
 }
