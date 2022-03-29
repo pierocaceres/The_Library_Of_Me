@@ -4,7 +4,12 @@ import { DataContext } from './DataContext'
 
 function Nav() {
 
-    const {signin} = useContext(DataContext)
+    const {signin, setSignin, setUser} = useContext(DataContext)
+
+    const signout = () => {
+        setSignin(false)
+        setUser([])
+    }
 
     return (
         <div className="title-nav">
@@ -15,6 +20,7 @@ function Nav() {
                 <Link to="/">Home</Link>
                 {!signin && <Link to="/signin">Sign in</Link>}
                 {signin && <Link to="/:username/my_books">My Books</Link>}
+                {signin && <Link to="/signout">Sign out</Link>}
             </div>
         </div>
     );

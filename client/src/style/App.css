@@ -31,8 +31,7 @@ header a.active{
 
 /* Search Field and Radio Button */
 
-.search-field input[type=text] {
-  /* float: right; */
+input[type=text] {
   padding: 6px;
   border: none;
   margin-top: 8px;
@@ -44,6 +43,16 @@ header a.active{
 
 .radio-option input[type=radio] {
   padding: 0 5px 0 5px;
+}
+
+input[type=password] {
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  border-bottom: 1px solid #000000;
+  width: 255px;
 }
 
 /* Card component */
