@@ -19,7 +19,7 @@ function Nav() {
             <div className="nav">
                 <Link to="/">Home</Link>
                 {!signin && <Link to="/signin">Sign in</Link>}
-                {signin && <Link to="/:username/my_books">My Books</Link>}
+                {signin && <Link to="/:username/my_books">My Library</Link>}
                 {signin && <Link to="/signout">Sign out</Link>}
             </div>
         </div>

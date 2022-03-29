@@ -1,6 +1,6 @@
 const { Author, Book, Genre, User } = require('../models')
-const Authors = require('../models/authors')
-const Books = require('../models/books')
+// const Authors = require('../models/authors')
+// const Books = require('../models/books')
 
 const gettAllBooks = async (req, res) => {
     try{
@@ -47,10 +47,21 @@ const getUsers = async(req, res) => {
     }
 }
 
+const createUser = async (req, res) => {
+    try {
+        const user = await new User(req.body)
+        await user.save()
+        return res.status(201).json({ user })
+    } catch (err) {
+        return res.status(500).json({ error: err.message })
+    }
+}
+
 module.exports = {
     gettAllBooks,
     getBookByTitle,
     getBookByAuthor,
     getBookByGenre,
     getUsers,
+    createUser,
 }

@@ -85,3 +85,14 @@ input[type=password] {
   width: 100%;
   height: 200px;
 }
+
+/* Main body of site */
+
+.container {
+  display: grid;
+}
+
+.info {
+  justify-items: left;
+  justify-content: left;
+}

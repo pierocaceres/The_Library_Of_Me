@@ -11,17 +11,18 @@ function Signout() {
     const closeSession = () => {
         setSignin(false)
         setUser([])
+        navigate('/')
     }
 
-    useEffect( () => {
-        setInterval(10000, navigate('/'))
-    }, [!signin])
+    // useEffect( () => {
+    //     setInterval(1000, navigate('/'))
+    // }, [!signin])
 
-    //closeSession()
+    closeSession()
 
     return (
         <div>
-            <h3>See you soon...</h3>
+            {/* <h3>See you soon...</h3> */}
             {/* {closeSession} */}
             
         </div>

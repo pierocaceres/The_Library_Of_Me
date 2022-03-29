@@ -7,6 +7,7 @@ import Nav from './component/Nav'
 import Home from './page/Home'
 import Signin from './page/Signin'
 import Signout from './page/Signout'
+import Register from './page/Register';
 
 const BASE_URL = 'http://localhost:3001/api'
 
@@ -30,7 +31,7 @@ function App() {
           <Route path='/' element={<Home />}/>
           <Route path='/signin' element={<Signin />} />
           <Route path='/signout' element={<Signout />}/>
-          {/* <Route path='/register' element={< />}/> */}
+          <Route path='/register' element={<Register />}/>
           <Route path={`${user.username}/my_books`} />
         </Routes>
       </main>

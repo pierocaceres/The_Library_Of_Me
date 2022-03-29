@@ -42,15 +42,19 @@ function Signin() {
         }
     }
 
+    const goToRegister = () => {
+        navigate('/register')
+    }
+
     return (
         <div>
             <div className='signin'>
-                username: <input type="text" name="username" placeholder="Enter your name" value={username} onChange={(event) => handleUsername(event)}/>
+                Username: <input type="text" name="username" placeholder="Enter your username" value={username} onChange={(event) => handleUsername(event)}/>
                 <br/>
-                password: <input type="password" name="password" placeholder="Enter your password" value={password} onChange={(event) => handlePassword(event)}/>
+                Password: <input type="password" name="password" placeholder="Enter your password" value={password} onChange={(event) => handlePassword(event)}/>
                 <br/>
             </div>
-            <button onClick={navigate('/register')}>Register</button>
+            <button onClick={goToRegister}>Register</button>
             <button onClick={confirmUser}>Sign in</button>            
         </div>
     );
