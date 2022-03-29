@@ -1,9 +1,8 @@
-import React, {useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { DataContext } from './DataContext'
 
-function Search(props) {
+function Search() {
 
-    //const { searchField, setSearchField } = props
     const {searchField, setSearchField, setSearch} = useContext(DataContext)
 
     let radioOption = ""
@@ -42,6 +41,8 @@ function Search(props) {
                 <input type="radio" name="search-type" value="Author"/>Author 
                 <input type="radio" name="search-type" value="Genre"/>Genre
             </div>
+            <br/>
+            <br/>
         </div>
     );
 }

@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { DataContext } from '../component/DataContext'
 import Search from '../component/Search';
+import DisplayResult from '../component/DisplayResult';
 
-function Home(props) {
+function Home() {
 
-    
+    const {search} = useContext(DataContext)
 
     return (
         <div>
             <Search />
+            {search && <DisplayResult /> }
         </div>
     );
 }
