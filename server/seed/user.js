@@ -6,7 +6,7 @@ db.on('error', console.error.bind(console, "Mongodb connection error:"))
 const main = async() => {
     const users = [
         {
-            username: 'PieroC',
+            username: 'PC',
             password: '1234',
             name: 'Piero',
         },

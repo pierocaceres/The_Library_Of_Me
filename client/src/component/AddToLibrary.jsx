@@ -23,13 +23,19 @@ function AddToLibrary() {
         }
     }
 
-    const addBook = () => {
+    const addBook = async () => {
         // Get current book and add to users books array
+        
+        user.books.push(currentBook)
+        console.log(user)
+        await axios.post(`${BASE_URL}/addToLibrary`, user)
+        alreadyInLibrary = true
+
     }
 
     return (
         <div>
-            {!alreadyInLibrary && <button onClick={addBook}>Add to Library</button>}
+            {!alreadyInLibrary && <button onClick={() => addBook()}>Add to Library</button>}
         </div>
     );
 }

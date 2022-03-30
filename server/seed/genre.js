@@ -6,43 +6,43 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const main = async () => {
     const genres = [
         {
-            type: "Children's"
+            genre: "Children's"
         },
         {
-            type: "Classics"
+            genre: "Classics"
         },
         {
-            type: "Fantasy"
+            genre: "Fantasy"
         },
         {
-            type: "Historical fiction"
+            genre: "Historical fiction"
         },
         {
-            type: "Horror"
+            genre: "Horror"
         },
         {
-            type: "Humor"
+            genre: "Humor"
         },
         {
-            type: "Literary fiction"
+            genre: "Literary fiction"
         },
         {
-            type: "Mystery & Thriller"
+            genre: "Mystery & Thriller"
         },
         {
-            type: "Nonfiction"
+            genre: "Nonfiction"
         },
         {
-            type: "Poetry"
+            genre: "Poetry"
         },
         {
-            type: "Romance"
+            genre: "Romance"
         },
         {
-            type: "Science fiction"
+            genre: "Science fiction"
         },
         {
-            type: "Young adult"
+            genre: "Young adult"
         },
     ]
 
