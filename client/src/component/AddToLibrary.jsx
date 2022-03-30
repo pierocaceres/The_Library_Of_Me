@@ -1,21 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import DataContext from './DataContext';
 import axios from 'axios';
 
 function AddToLibrary() {
 
-    const {BASE_URL, signin, user, currentBook, setCurrentBook} = useContext(DataContext)
+    const {BASE_URL, user, currentBook } = useContext(DataContext)
 
     let alreadyInLibrary = false
-    
-    console.log(user.books.length)
-    console.log(currentBook)
+
+    let navigate = useNavigate()
 
     // Check to see if the user has the book in their library or not
 
     if(user.books.length === 0){ alreadyInLibrary = false}
     else{
-        const foundBook = user.books.find(bookId => bookId === currentBook._id)
+        //console.log(user.books[0]._id)
+        const foundBook = user.books.find(book => book._id === currentBook._id)
         if(foundBook){
             alreadyInLibrary = true
         }else{
@@ -23,14 +24,11 @@ function AddToLibrary() {
         }
     }
 
-    const addBook = async () => {
-        // Get current book and add to users books array
-        
+    const addBook = async () => {      
         user.books.push(currentBook)
-        console.log(user)
         await axios.post(`${BASE_URL}/addToLibrary`, user)
         alreadyInLibrary = true
-
+        navigate(`/book/${currentBook._id}`)
     }
 
     return (
