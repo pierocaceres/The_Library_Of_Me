@@ -11,6 +11,15 @@ const gettAllBooks = async (req, res) => {
     }
 }
 
+const getBookById = async (req, res) => {
+    try{
+        const book = await Book.findById(req.params.id)
+        return res.status(200).json({book})
+    }catch (err){
+        return res.status(500).send(err.message)
+    }
+}
+
 const getBookByTitle = async (req, res) => {
     try{
         const books = await Book.find({title: req.params.title})
@@ -59,6 +68,7 @@ const createUser = async (req, res) => {
 
 module.exports = {
     gettAllBooks,
+    getBookById,
     getBookByTitle,
     getBookByAuthor,
     getBookByGenre,

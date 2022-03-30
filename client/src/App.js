@@ -8,6 +8,7 @@ import Home from './page/Home'
 import Signin from './page/Signin'
 import Signout from './page/Signout'
 import Register from './page/Register';
+import BookPage from './page/BookPage';
 
 const BASE_URL = 'http://localhost:3001/api'
 
@@ -18,10 +19,11 @@ function App() {
   const [searchField, setSearchField] = useState("")
   const [results, setResults] = useState([])
   const [user, setUser] = useState([])
+  const [currentBook, setCurrentBook] = useState({})
   
   return (
     <div className="App">
-      <DataContext.Provider value={{BASE_URL, signin, setSignin, searchField, setSearchField, search, setSearch, results, setResults, user, setUser}}>
+      <DataContext.Provider value={{BASE_URL, signin, setSignin, searchField, setSearchField, search, setSearch, results, setResults, user, setUser, currentBook, setCurrentBook}}>
       <header>
         <Nav />
       </header>
@@ -32,7 +34,8 @@ function App() {
           <Route path='/signin' element={<Signin />} />
           <Route path='/signout' element={<Signout />}/>
           <Route path='/register' element={<Register />}/>
-          <Route path={`${user.username}/my_books`} />
+          <Route path={`${user.username}/my_library`} />
+          <Route path={`/book/:id`} element={<BookPage />} />
         </Routes>
       </main>
       </DataContext.Provider>      

@@ -4,12 +4,7 @@ import { DataContext } from './DataContext'
 
 function Nav() {
 
-    const {signin, setSignin, setUser} = useContext(DataContext)
-
-    const signout = () => {
-        setSignin(false)
-        setUser([])
-    }
+    const {signin} = useContext(DataContext)
 
     return (
         <div className="title-nav">

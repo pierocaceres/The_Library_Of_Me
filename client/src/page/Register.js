@@ -33,7 +33,7 @@ function Register() {
             const users = await axios.get(`${BASE_URL}/users`)
             const foundUser = users.data.users.find(user => user.username === username)
             if(!foundUser){
-                console.log(`Username is availabe`)
+                alert("Your account has been created")
                 
                 const createUser = {
                     name: name,
@@ -44,11 +44,13 @@ function Register() {
                 await axios.post(`${BASE_URL}/createUser`, createUser)
 
             }else{
-                console.log(`Username already exist.`)
+                // console.log(`Username already exist.`)
+                alert(`Username already exist.`)
             }
 
         }else{
-            console.log(`Passwords do not match`)
+            //console.log(`Passwords do not match`)
+            alert(`Passwords do not match`)
         }
     }
 
@@ -71,6 +73,7 @@ function Register() {
                     Confirm password: <input type="password" name="password" placeholder="Confirm your password" value={confirmPassword} onChange={(event) => handleConfirmPassword(event)}/>
                     <br/>
                 </div>
+                <br/>
                 <button onClick={checkUserName}>Submit</button>
             </div>
         </div>

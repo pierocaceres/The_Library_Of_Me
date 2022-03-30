@@ -54,6 +54,7 @@ function Signin() {
                 Password: <input type="password" name="password" placeholder="Enter your password" value={password} onChange={(event) => handlePassword(event)}/>
                 <br/>
             </div>
+            <br/>
             <button onClick={goToRegister}>Register</button>
             <button onClick={confirmUser}>Sign in</button>            
         </div>
