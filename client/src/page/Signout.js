@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DataContext } from '../component/DataContext'
 
 function Signout() {
 
-    const {signin, setSignin, setUser} = useContext(DataContext)
+    const { setSignin, setUser} = useContext(DataContext)
 
     let navigate = useNavigate()
 
@@ -14,17 +14,11 @@ function Signout() {
         navigate('/')
     }
 
-    // useEffect( () => {
-    //     setInterval(1000, navigate('/'))
-    // }, [!signin])
-
     closeSession()
 
     return (
         <div>
-            {/* <h3>See you soon...</h3> */}
-            {/* {closeSession} */}
-            
+
         </div>
     );
 }
