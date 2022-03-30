@@ -11,6 +11,8 @@ router.get('/find/author/:author', controllers.getBookByAuthor)
 router.get('/find/genre/:genre', controllers.getBookByGenre)
 router.get('/users', controllers.getUsers)
 
-router.post(`/createUser`, controllers.createUser)
+router.post('/createUser', controllers.createUser)
+
+router.post('/addToLibrary', controller.addToLibrary)
 
 module.exports = router

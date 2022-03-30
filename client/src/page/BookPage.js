@@ -12,7 +12,6 @@ function BookPage() {
 
     const getBook = async () => {
         const book = await axios.get(`${BASE_URL}/find/book/${id}`)
-        console.log(book)
         setCurrentBook(book.data.book)
     }
 
@@ -33,9 +32,11 @@ function BookPage() {
                     <ul>
                         {currentBook.genre.map(type => {return <li>{type}</li>})}
                     </ul>
+                    <div className="info-add">
+                        {signin && <AddToLibrary />}
+                    </div>
                 </div>
             </div>
-            {signin && <AddToLibrary />}
         </div>
     );
 }
