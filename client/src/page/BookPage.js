@@ -6,34 +6,21 @@ import AddToLibrary from '../component/AddToLibrary';
 
 function BookPage() {
 
-    const {BASE_URL, signin, currentBook, setCurrentBook} = useContext(DataContext)
+    const {BASE_URL, signin, currentBook} = useContext(DataContext)
 
     const [genres, setGenres] = useState()
-
-    let { id } = useParams()
-
-    const getBook = async () => {
-        const book = await axios.get(`${BASE_URL}/find/book/${id}`)
-        setCurrentBook(book.data.book)
-    }
 
     const getGenres = async () => {
         const allGenres = await axios.get(`${BASE_URL}/find/genres`)
         setGenres(allGenres.data.genres)
-
-        // currentBook.genre.forEach(type => {
-            
-        // })
     }
 
     useEffect( () => {
-        //getBook()
         getGenres()
-        
     }, [])
 
     return (
-        <div className="info-book">
+        <div className="book">
             <h1> {currentBook.title} </h1>
             <div className="info">
                 <div className='info-picture' >
@@ -42,7 +29,6 @@ function BookPage() {
                 <div className="info-text">
                     <h4>Description: {currentBook.description}</h4>
                     <h4>Genres:</h4>
-                    {console.log(currentBook.genre)}
                     <ul>
                         {currentBook.genre.map(type => {return <li key={type}>{type}</li>})}
                     </ul>
