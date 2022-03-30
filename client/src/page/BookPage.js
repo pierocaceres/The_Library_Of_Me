@@ -2,10 +2,11 @@ import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import DataContext from '../component/DataContext';
 import axios from 'axios';
+import AddToLibrary from '../component/AddToLibrary';
 
 function BookPage() {
 
-    const {BASE_URL, search, results, currentBook, setCurrentBook} = useContext(DataContext)
+    const {BASE_URL, signin, currentBook, setCurrentBook} = useContext(DataContext)
 
     let { id } = useParams()
 
@@ -29,11 +30,12 @@ function BookPage() {
                 <div className="info-text">
                     <h4>Description: {currentBook.description}</h4>
                     <h4>Genres:</h4>
-                    {/* <ul>
-                        {rollerCoaster.type.map(type => {return <li>{type}</li>})}
-                    </ul> */}
+                    <ul>
+                        {currentBook.genre.map(type => {return <li>{type}</li>})}
+                    </ul>
                 </div>
             </div>
+            {signin && <AddToLibrary />}
         </div>
     );
 }
