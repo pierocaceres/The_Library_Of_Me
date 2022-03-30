@@ -6,13 +6,13 @@ import { useNavigate } from 'react-router-dom';
 
 function Home() {
 
-    const {search, results} = useContext(DataContext)
+    const {search, results, setSearch} = useContext(DataContext)
 
     let navigate = useNavigate()
 
-    // useEffect( () => {
-        
-    // }, [])
+    useEffect( () => {
+        setSearch(false)
+    }, [])
 
     return (
         <div>

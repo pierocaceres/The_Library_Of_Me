@@ -56,6 +56,24 @@ const getUsers = async(req, res) => {
     }
 }
 
+const getGenres = async (req, res) => {
+    try{
+        const genres = await Genre.find()
+        return res.status(200).json({genres})
+    }catch (err){
+        return res.status(500).send(err.message)
+    }
+}
+
+const getGenreById = async (req,res) => {
+    try{
+        const genre = await Genre.findById(req.params.id)
+        return res.status(200).json({genre})
+    }catch (err){
+        return res.status(500).send(err.message)
+    }
+}
+
 const createUser = async (req, res) => {
     try {
         const user = await new User(req.body)
@@ -83,6 +101,8 @@ module.exports = {
     getBookByAuthor,
     getBookByGenre,
     getUsers,
+    getGenres,
+    getGenreById,
     createUser,
     addToLibrary,
 }

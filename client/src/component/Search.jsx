@@ -13,11 +13,11 @@ function Search() {
             setSearch(true)
 
             if(radioOption === "Title"){
-                const result = await axios.get(`${BASE_URL}/find/title/${searchField}`)
+                const result = await axios.get(`${BASE_URL}/find/book/title/${searchField}`)
                 setResults(result.data.books)
                 console.log(results)
             }else if(radioOption === "Author"){
-                const authorResult = await axios.get(`${BASE_URL}/find/author/${searchField}`)
+                const authorResult = await axios.get(`${BASE_URL}/find/book/author/${searchField}`)
                 const bookResult = await axios.get(`${BASE_URL}/find`)
 
                 const bookByAuthor = bookResult.data.books.filter(result => authorResult.data.author[0]._id === result.author)
@@ -27,7 +27,7 @@ function Search() {
 
             }else if(radioOption === "Genre"){
                 // AXIOS call for Genre
-                const genreResult = await axios.get(`${BASE_URL}/find/genre/${searchField}`)
+                const genreResult = await axios.get(`${BASE_URL}/find/book/genres/${searchField}`)
                 const bookResult = await axios.get(`${BASE_URL}/find`)
 
                 console.log(bookResult)
@@ -47,10 +47,10 @@ function Search() {
 
         setSearchField("")
         
-        var ele = document.getElementsByName("search-type");
-        for(var i=0;i<ele.length;i++){
-            ele[i].checked = false;
-        }
+        // var ele = document.getElementsByName("search-type");
+        // for(var i=0;i<ele.length;i++){
+        //     ele[i].checked = false;
+        // }
     }
 
     const handleSearch = (event) => {
