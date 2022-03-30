@@ -9,7 +9,8 @@ function Nav() {
     return (
         <div className="title-nav">
             <div className="website-title">
-                <h1>The Library of Me</h1>
+                <h1>The Library of Me </h1>
+                {/* <img src="../../../assets/bookshelf.jpg" alt='icon'/> */}
             </div>
             <div className="nav">
                 <Link to="/">Home</Link>

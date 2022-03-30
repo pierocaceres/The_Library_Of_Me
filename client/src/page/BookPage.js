@@ -27,8 +27,9 @@ function BookPage() {
     }
 
     useEffect( () => {
-        getBook()
+        //getBook()
         getGenres()
+        
     }, [])
 
     return (
@@ -41,8 +42,9 @@ function BookPage() {
                 <div className="info-text">
                     <h4>Description: {currentBook.description}</h4>
                     <h4>Genres:</h4>
+                    {console.log(currentBook.genre)}
                     <ul>
-                        {currentBook.genre.map(type => {return <li>{type}</li>})}
+                        {currentBook.genre.map(type => {return <li key={type}>{type}</li>})}
                     </ul>
                     <div className="info-add">
                         {signin && <AddToLibrary />}
