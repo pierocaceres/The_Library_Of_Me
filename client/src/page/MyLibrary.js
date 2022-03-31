@@ -16,7 +16,8 @@ function MyLibrary() {
 
     return (
         <div>
-            <h3>{greetingMessage}</h3>
+            <h3>Hi {user.name}</h3>
+            <h4>{greetingMessage}</h4>
             <div className="container-grid">
                 {user.books.length > 0 && user.books.map((book) => (
                     <DisplayBook key={book._id}

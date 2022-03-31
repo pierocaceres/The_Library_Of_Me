@@ -16,6 +16,7 @@ function Nav() {
             </div>
             <div className="nav">
                 {!signin && <Link to="/signin">Sign in</Link>}
+                {!signin && <Link to="/register">Register</Link>}
                 {signin && <Link to={`/${user.username}/my_library`}>My Library</Link>}
                 {signin && <Link to="/signout">Sign out</Link>}
             </div>

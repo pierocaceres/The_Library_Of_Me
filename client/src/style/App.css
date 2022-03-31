@@ -32,7 +32,6 @@
 .website-title h1 {
   cursor: pointer;
   max-width: 300px;
-  : center;
 }
 
 .nav {
@@ -41,7 +40,7 @@
   justify-content: flex-end;
 }
 
-/* Search Field and Radio Button */
+/* Search Field and Radio */
 
 .search {
   display: flex;
@@ -129,10 +128,15 @@ input[type=password] {
   height: 200px;
 }
 
+.remove-button{
+  justify-self: center;
+}
+
 /* Main body of site */
 
 .container {
   display: grid;
+  flex-direction: column;
 }
 
 /* Individual Book display */
@@ -169,4 +173,55 @@ input[type=password] {
   justify-content: center;
   align-items: center;
   padding-top: 15px;
+}
+
+/* Button Styling */
+
+button {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+}
+
+button:hover {
+  background-color: #f7fafa;
+}
+
+button:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+
+.button-remove {
+  align-items: center;
+  background-color: #FFE7E7;
+  background-position: 0 0;
+  border: 1px solid #FEE0E0;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #D33A2C;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  line-height: 33.4929px;
+  padding: 2px 12px;
+  text-align: left;
+  text-underline-offset: 1px;
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+}
+
+.button-red:active:hover,
+.button-red:focus:hover,
+.button-red:focus {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
 }

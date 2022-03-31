@@ -18,7 +18,7 @@ function RemoveBook(props) {
     }
     return (
         <div>
-            <button onClick={() => removeBookFromLibrary()}>Remove Book</button>
+            <button className='button-remove' onClick={() => removeBookFromLibrary()}>Remove Book</button>
         </div>
     );
 }

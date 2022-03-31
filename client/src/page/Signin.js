@@ -23,7 +23,6 @@ function Signin() {
     const confirmUser = async () => {
         const users = await axios.get(`${BASE_URL}/users`)
         
-        //console.log(users.data.users)
         const foundUser = users.data.users.find(user => user.username === username)
         console.log(foundUser)
         if(username === "" && password === ""){
@@ -38,11 +37,9 @@ function Signin() {
                     navigate('/')
                     console.log(user)
                 }else{
-                    //console.log(`Incorrect password`)
                     alert("incorrect password")
                 }
             }else{
-                //console.log(`Incorrect username`)
                 alert("Incorrect username or password")
             }
         }
@@ -61,7 +58,7 @@ function Signin() {
                 <br/>
             </div>
             <br/>
-            <button onClick={goToRegister}>Register</button>
+            {/* <button onClick={goToRegister}>Register</button> */}
             <button onClick={confirmUser}>Sign in</button>            
         </div>
     );

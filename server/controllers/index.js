@@ -137,3 +137,14 @@ module.exports = {
     addToLibrary,
     removeFromLibrary,
 }
+
+// const delStudyResource = async (req, res) => {
+//     try {
+//         const del = await Study.find({ "displayName" : req.params.name }).deleteOne().exec()
+//             return res.status(200).json({ del })
+//     } catch (error) {
+//         return res.status(500).send(error.message);
+//     }
+// }
+
+// axios.delete('URL', name)

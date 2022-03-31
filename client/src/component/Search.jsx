@@ -6,7 +6,7 @@ function Search() {
 
     const {BASE_URL, searchField, setSearchField, setSearch, results, setResults} = useContext(DataContext)
 
-    let radioOption = ""
+    let radioOption = "Title"
 
     const getSearch = async () => {
         if (searchField !== '') {
@@ -15,7 +15,6 @@ function Search() {
             if(radioOption === "Title"){
                 const result = await axios.get(`${BASE_URL}/find/book/title/${searchField}`)
                 setResults(result.data.books)
-                console.log(results)
             }else if(radioOption === "Author"){
                 const authorResult = await axios.get(`${BASE_URL}/find/book/author/${searchField}`)
                 const bookResult = await axios.get(`${BASE_URL}/find`)
@@ -23,8 +22,6 @@ function Search() {
                 const bookByAuthor = bookResult.data.books.filter(result => authorResult.data.author[0]._id === result.author)
 
                 setResults(bookByAuthor)
-                console.log(results)
-
             }else if(radioOption === "Genre"){
                 // AXIOS call for Genre
                 const genreResult = await axios.get(`${BASE_URL}/find/book/genres/${searchField}`)
@@ -65,7 +62,7 @@ function Search() {
         <div className='search'>
             <div className="search-field">
                 <input type="text" name="search" placeholder="Search by Title, Author, or Genre...." value={searchField} onChange={(event) => handleSearch(event)}/>
-                <button onClick={getSearch}>Submit</button>
+                <button onClick={getSearch}>Search</button>
             </div>
             <br/>
             <div className="radio-option" onChange={(event) => handleRadio(event)}>
