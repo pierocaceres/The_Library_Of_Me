@@ -9,7 +9,9 @@ function DisplayBook(props) {
                 <img src={props.book_cover} alt={`${props.title} cover`}/>
                 <h3>{props.title}</h3>
                 <div className="remove-button">
-                    <RemoveBook />
+                    <RemoveBook 
+                        book={props.book}
+                    />
                 </div>
             </div>
         

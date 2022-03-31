@@ -10,6 +10,7 @@ router.get('/find/book/title/:title', controllers.getBookByTitle)
 router.get('/find/book/author/:author', controllers.getBookByAuthor)
 router.get('/find/book/genres/:genre', controllers.getBookByGenre)
 router.get('/users', controllers.getUsers)
+router.get('/users/:id', controllers.getUserById)
 router.get('/find/genres', controllers.getGenres)
 router.get('/find/genres/:id', controllers.getGenreById)
 
@@ -17,6 +18,6 @@ router.post('/users/createUser', controllers.createUser)
 
 router.post('/library/addToLibrary', controllers.addToLibrary)
 
-router.delete('/library/deleteFromLibrary', controllers.removeFromLibrary)
+router.post('/library/deleteFromLibrary', controllers.removeFromLibrary)
 
 module.exports = router

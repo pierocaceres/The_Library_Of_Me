@@ -20,9 +20,10 @@ function MyLibrary() {
             <div className="container-grid">
                 {user.books.length > 0 && user.books.map((book) => (
                     <DisplayBook key={book._id}
+                        book={book}
                         book_cover={book.book_cover}
                         title={book.title}
-                        id={book._id}
+                        bookId={book._id}
                     />
                 ))}
             </div>

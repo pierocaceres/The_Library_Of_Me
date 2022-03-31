@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import axios from 'axios';
+import DataContext from './DataContext';
 
 function RemoveBook(props) {
 
-    const removeBookFromLibrary = () => {
+    const {BASE_URL, user, setUser} = useContext(DataContext)
 
+    let temp = {
+        username: user.username,
+        book: props.book
+    }
+
+    const removeBookFromLibrary = async () => {    
+        await axios.post(`${BASE_URL}/library/deleteFromLibrary`, temp)
+        const updatedUserInfo = await axios.get(`${BASE_URL}/users/${user._id}`)
+        setUser(updatedUserInfo.data.users)
     }
     return (
         <div>

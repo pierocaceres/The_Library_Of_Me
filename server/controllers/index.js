@@ -49,7 +49,17 @@ const getBookByGenre = async (req, res) => {
 
 const getUsers = async(req, res) => {
     try{
-        const users = await User.find({type: req.params.genre})
+        const users = await User.find()
+        return res.status(200).json({users})
+    }catch (err){
+        return res.status(500).send(err.message)
+    }
+}
+
+const getUserById = async(req, res) => {
+    try{
+        console.log(req.body)
+        const users = await User.findById(req.params.id)
         return res.status(200).json({users})
     }catch (err){
         return res.status(500).send(err.message)
@@ -97,8 +107,8 @@ const addToLibrary = async (req, res) => {
 
 const removeFromLibrary = async (req, res) => {
     try {
-        console.log(req.body.books)
-        const user = await User.findByIdAndUpdate(req.body._id, { books: req.body.books })
+        console.log(req.body)
+        const user = await User.findOneAndUpdate({username: req.body.username}, { $pull: {books: req.body.book}})
         user.save()
         return res.status(201).json({ user })
     } catch (err) {
@@ -113,6 +123,7 @@ module.exports = {
     getBookByAuthor,
     getBookByGenre,
     getUsers,
+    getUserById,
     getGenres,
     getGenreById,
     createUser,
