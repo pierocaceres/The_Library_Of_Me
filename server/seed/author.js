@@ -18,7 +18,7 @@ const main = async() => {
             picture: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.ulm.edu%2Flyceum%2Fimages%2Fnicholas-sparks.jpg&imgrefurl=https%3A%2F%2Fwww.ulm.edu%2Flyceum%2Fsparks.html&tbnid=GCFesFkpdDxqhM&vet=12ahUKEwi9hJSmnun2AhX5YDUKHYDgCiAQMygbegUIARCUAg..i&docid=t6ScJiDpuwCxaM&w=225&h=303&q=nicholas%20sparks&ved=2ahUKEwi9hJSmnun2AhX5YDUKHYDgCiAQMygbegUIARCUAg"
         },
         {
-            name: "Susan Collins",
+            name: "Suzanne Collins",
             picture: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.suzannecollinsbooks.com%2Fimages%2Fsuzannecollins-2020-photocredittoddplitt-x_small.jpg&imgrefurl=https%3A%2F%2Fwww.suzannecollinsbooks.com%2Fbio.htm&tbnid=uMrInoqNksNpGM&vet=12ahUKEwiIms2Dn-n2AhXtgXIEHSVQCh4QMygIegUIARC_AQ..i&docid=RM7aXjSP76pEtM&w=213&h=320&q=susan%20collins%20author&ved=2ahUKEwiIms2Dn-n2AhXtgXIEHSVQCh4QMygIegUIARC_AQ"
         },
         {

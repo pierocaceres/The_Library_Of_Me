@@ -8,7 +8,7 @@ const main = async() => {
     const tolkien = await Author.find({name: "J. R. R. Tolkien"})
     const king = await Author.find({name: "Stephen King"})
     const sparks = await Author.find({name: "Nicholas Sparks"})
-    const collins = await Author.find({name: "Susan Collins"})
+    const collins = await Author.find({name: "Suzanne Collins"})
     const rowling = await Author.find({name: "J. K. Rowling"})
     const brown = await Author.find({name: "Dan Brown"})
     const austen = await Author.find({name: "Jane Austen"})
@@ -29,7 +29,6 @@ const main = async() => {
             description: "The Lord of the Rings is an epic high-fantasy novel by English author and scholar J. R. R. Tolkien. Set in Middle-earth, intended to be Earth at some distant time in the past, the story began as a sequel to Tolkien's 1937 children's book The Hobbit, but eventually developed into a much larger work.",
             genre: [fantasy[0]._id],
             author: tolkien[0]._id
-
         },
         {
             title: "Carrie",
