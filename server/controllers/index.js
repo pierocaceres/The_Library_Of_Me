@@ -58,7 +58,6 @@ const getUsers = async(req, res) => {
 
 const getUserById = async(req, res) => {
     try{
-        console.log(req.body)
         const users = await User.findById(req.params.id)
         return res.status(200).json({users})
     }catch (err){
@@ -84,6 +83,15 @@ const getGenreById = async (req,res) => {
     }
 }
 
+const getAuthorById = async (req,res) => {
+    try{
+        const author = await Author.findById(req.params.id)
+        return res.status(200).json({author})
+    }catch (err){
+        return res.status(500).send(err.message)
+    }
+}
+
 const createUser = async (req, res) => {
     try {
         const user = await new User(req.body)
@@ -96,7 +104,6 @@ const createUser = async (req, res) => {
 
 const addToLibrary = async (req, res) => {
     try {
-        console.log(req.body.books)
         const user = await User.findByIdAndUpdate(req.body._id, { books: req.body.books })
         user.save()
         return res.status(201).json({ user })
@@ -107,7 +114,6 @@ const addToLibrary = async (req, res) => {
 
 const removeFromLibrary = async (req, res) => {
     try {
-        console.log(req.body)
         const user = await User.findOneAndUpdate({username: req.body.username}, { $pull: {books: req.body.book}})
         user.save()
         return res.status(201).json({ user })
@@ -126,6 +132,7 @@ module.exports = {
     getUserById,
     getGenres,
     getGenreById,
+    getAuthorById,
     createUser,
     addToLibrary,
     removeFromLibrary,

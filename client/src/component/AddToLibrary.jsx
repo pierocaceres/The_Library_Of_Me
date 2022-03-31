@@ -15,7 +15,6 @@ function AddToLibrary() {
 
     if(user.books.length === 0){ alreadyInLibrary = false}
     else{
-        //console.log(user.books[0]._id)
         const foundBook = user.books.find(book => book._id === currentBook._id)
         if(foundBook){
             alreadyInLibrary = true
@@ -24,7 +23,7 @@ function AddToLibrary() {
         }
     }
 
-    const addBook = async () => {      
+    const addBook = async () => {   
         user.books.push(currentBook)
         await axios.post(`${BASE_URL}/library/addToLibrary`, user)
         alreadyInLibrary = true

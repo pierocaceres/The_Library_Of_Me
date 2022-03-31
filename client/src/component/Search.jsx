@@ -62,7 +62,7 @@ function Search() {
     }
 
     return (
-        <div>
+        <div className='search'>
             <div className="search-field">
                 <input type="text" name="search" placeholder="Search by Title, Author, or Genre...." value={searchField} onChange={(event) => handleSearch(event)}/>
                 <button onClick={getSearch}>Submit</button>

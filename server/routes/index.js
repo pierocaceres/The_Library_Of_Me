@@ -13,6 +13,7 @@ router.get('/users', controllers.getUsers)
 router.get('/users/:id', controllers.getUserById)
 router.get('/find/genres', controllers.getGenres)
 router.get('/find/genres/:id', controllers.getGenreById)
+router.get('/find/author/:id', controllers.getAuthorById)
 
 router.post('/users/createUser', controllers.createUser)
 
