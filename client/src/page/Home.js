@@ -8,7 +8,7 @@ import DisplayResult from '../component/DisplayResult';
 
 function Home() {
 
-    const {BASE_URL, search, results, setSearch, setCurrentBook} = useContext(DataContext)
+    const {BASE_URL, search, results, setSearch, setCurrentBook, user} = useContext(DataContext)
 
     let navigate = useNavigate()
 
@@ -22,6 +22,7 @@ function Home() {
         navigate(`/book/${id}`)
     }
 
+    // console.log(user.username)
     return (
         <div>
             <Search />

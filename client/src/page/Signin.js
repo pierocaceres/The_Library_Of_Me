@@ -26,19 +26,25 @@ function Signin() {
         //console.log(users.data.users)
         const foundUser = users.data.users.find(user => user.username === username)
         console.log(foundUser)
-        if(foundUser){
-            console.log(`Username is a match`)
-            if(foundUser.password === password){
-                console.log(`password is a match`)
-                setSignin(true)
-                setUser(foundUser)
-                navigate('/')
-                console.log(user)
-            }else{
-                console.log(`Incorrect password`)
-            }
+        if(username === "" && password === ""){
+            alert("Enter username and password")
         }else{
-            console.log(`Incorrect username`)
+            if(foundUser){
+                console.log(`Username is a match`)
+                if(foundUser.password === password){
+                    console.log(`password is a match`)
+                    setSignin(true)
+                    setUser(foundUser)
+                    navigate('/')
+                    console.log(user)
+                }else{
+                    //console.log(`Incorrect password`)
+                    alert("incorrect password")
+                }
+            }else{
+                //console.log(`Incorrect username`)
+                alert("Incorrect username or password")
+            }
         }
     }
 

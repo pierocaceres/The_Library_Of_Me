@@ -9,6 +9,7 @@ import Signin from './page/Signin'
 import Signout from './page/Signout'
 import Register from './page/Register';
 import BookPage from './page/BookPage';
+import MyLibrary from './page/MyLibrary';
 
 const BASE_URL = 'http://localhost:3001/api'
 
@@ -34,7 +35,7 @@ function App() {
           <Route path='/signin' element={<Signin />} />
           <Route path='/signout' element={<Signout />}/>
           <Route path='/register' element={<Register />}/>
-          <Route path={`${user.username}/my_library`} />
+          <Route path={`/${user.username}/my_library`} element={<MyLibrary />} />
           <Route path={`/book/:id`} element={<BookPage />} />
         </Routes>
       </main>

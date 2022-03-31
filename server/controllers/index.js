@@ -86,8 +86,8 @@ const createUser = async (req, res) => {
 
 const addToLibrary = async (req, res) => {
     try {
-        //console.log(req.body.books)
-        const user = await User.findByIdAndUpdate(req.body._id, { books: req.body })
+        console.log(req.body.books)
+        const user = await User.findByIdAndUpdate(req.body._id, { books: req.body.books })
         user.save()
         return res.status(201).json({ user })
     } catch (err) {

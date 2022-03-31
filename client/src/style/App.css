@@ -29,6 +29,11 @@ header a.active{
   color: white;
 }
 
+.website-title{
+  display: inline;
+  justify-content: flex-start;
+}
+
 .title-nav{
   display: flex;
   flex-direction: row;
@@ -93,6 +98,22 @@ input[type=password] {
 }
 
 .card img {
+  width: 100%;
+  height: 200px;
+}
+
+.book-display {
+  max-width: 200px;
+  max-height: 380px;
+  border-radius: 4px;
+  background-color: #6d6c6d;
+  transition: all 0.2s;
+  color: white;
+  align-content: center;
+  place-self: center;
+}
+
+.book-display img {
   width: 100%;
   height: 200px;
 }

@@ -63,16 +63,16 @@ function Register() {
                 <div>
                     <p>Please fill out the fields below.</p>
                 </div>
-                <div className='register'>
+                <form className='register'>
                     Name: <input type="text" name="name" placeholder="Enter your name" value={name} onChange={(event) => handleName(event)}/>
                     <br/>
-                    username: <input type="text" name="username" placeholder="Enter your name" value={username} onChange={(event) => handleUsername(event)}/>
+                    username: <input type="text" name="username" placeholder="Enter your username" value={username} onChange={(event) => handleUsername(event)}/>
                     <br/>
                     password: <input type="password" name="password" placeholder="Enter your password" value={password} onChange={(event) => handlePassword(event)}/>
                     <br/>
                     Confirm password: <input type="password" name="password" placeholder="Confirm your password" value={confirmPassword} onChange={(event) => handleConfirmPassword(event)}/>
                     <br/>
-                </div>
+                </form>
                 <br/>
                 <button onClick={checkUserName}>Submit</button>
             </div>
