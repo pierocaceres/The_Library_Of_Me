@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import DataContext from '../component/DataContext';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
 
@@ -10,6 +11,8 @@ function Register() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
+
+    let navigate = useNavigate()
 
     
     const handleName = (event) => {
@@ -34,6 +37,7 @@ function Register() {
             const foundUser = users.data.users.find(user => user.username === username)
             if(!foundUser){
                 alert("Your account has been created")
+                navigate("/signin")
                 
                 const createUser = {
                     name: name,
@@ -41,7 +45,7 @@ function Register() {
                     password: password,
                 }
 
-                await axios.post(`${BASE_URL}/createUser`, createUser)
+                await axios.post(`${BASE_URL}/users/createUser`, createUser)
 
             }else{
                 // console.log(`Username already exist.`)

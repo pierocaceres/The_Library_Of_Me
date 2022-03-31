@@ -26,7 +26,7 @@ function AddToLibrary() {
 
     const addBook = async () => {      
         user.books.push(currentBook)
-        await axios.post(`${BASE_URL}/addToLibrary`, user)
+        await axios.post(`${BASE_URL}/library/addToLibrary`, user)
         alreadyInLibrary = true
         navigate(`/book/${currentBook._id}`)
     }

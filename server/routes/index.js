@@ -13,8 +13,10 @@ router.get('/users', controllers.getUsers)
 router.get('/find/genres', controllers.getGenres)
 router.get('/find/genres/:id', controllers.getGenreById)
 
-router.post('/createUser', controllers.createUser)
+router.post('/users/createUser', controllers.createUser)
 
-router.post('/addToLibrary', controllers.addToLibrary)
+router.post('/library/addToLibrary', controllers.addToLibrary)
+
+router.delete('/library/deleteFromLibrary', controllers.removeFromLibrary)
 
 module.exports = router
