@@ -139,6 +139,30 @@ input[type=password] {
   flex-direction: column;
 }
 
+/* Registration Page styling*/
+
+.registration-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.registration-left, .registration-right{
+  flex: 25%;
+}
+
+.registration {
+  flex: 50%;
+}
+
+.register {
+  padding-left: 25%;
+  text-align: left;
+}
+
+.register input[type=text], input[type=password] {
+  margin-bottom: 10px;
+}
+
 /* Individual Book display */
 
 .info{

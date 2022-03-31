@@ -59,7 +59,8 @@ function Register() {
     }
 
     return (
-        <div className="container">
+        <div className="registration-container">
+            <div className='registration-left'></div>
             <div className="registration">
                 <div className="title">
                     <h3>Registration</h3>
@@ -68,18 +69,19 @@ function Register() {
                     <p>Please fill out the fields below.</p>
                 </div>
                 <form className='register'>
-                    Name: <input type="text" name="name" placeholder="Enter your name" value={name} onChange={(event) => handleName(event)}/>
+                    Name <br/><input type="text" name="name" placeholder="Enter your name" value={name} onChange={(event) => handleName(event)}/>
                     <br/>
-                    username: <input type="text" name="username" placeholder="Enter your username" value={username} onChange={(event) => handleUsername(event)}/>
+                    Username <br/><input type="text" name="username" placeholder="Enter your username" value={username} onChange={(event) => handleUsername(event)}/>
                     <br/>
-                    password: <input type="password" name="password" placeholder="Enter your password" value={password} onChange={(event) => handlePassword(event)}/>
+                    Password <br/><input type="password" name="password" placeholder="Enter your password" value={password} onChange={(event) => handlePassword(event)}/>
                     <br/>
-                    Confirm password: <input type="password" name="password" placeholder="Confirm your password" value={confirmPassword} onChange={(event) => handleConfirmPassword(event)}/>
+                    Confirm password <br/><input type="password" name="password" placeholder="Confirm your password" value={confirmPassword} onChange={(event) => handleConfirmPassword(event)}/>
                     <br/>
                 </form>
                 <br/>
                 <button onClick={checkUserName}>Submit</button>
             </div>
+            <div className='registration-right'></div>
         </div>
     );
 }
