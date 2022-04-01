@@ -19,6 +19,6 @@ router.post('/users/createUser', controllers.createUser)
 
 router.post('/library/addToLibrary', controllers.addToLibrary)
 
-router.post('/library/deleteFromLibrary', controllers.removeFromLibrary)
+router.post('/library/removeFromLibrary', controllers.removeFromLibrary)
 
 module.exports = router
