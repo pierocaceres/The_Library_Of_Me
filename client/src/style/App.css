@@ -227,7 +227,7 @@ button:focus {
   outline: 0;
 }
 
-button.button-add {
+.button-add {
   background-color: #c2fbd7;
   color: #008000;
 }
@@ -242,11 +242,6 @@ button.button-add {
   color: #D33A2C;
   cursor: pointer;
   display: flex;
-  font-weight: 700;
-  line-height: 33.4929px;
-  padding: 2px 12px;
-  text-align: left;
-  text-underline-offset: 1px;
   transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
   margin-top: 10px;
 }

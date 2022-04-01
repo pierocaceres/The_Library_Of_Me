@@ -35,7 +35,6 @@ function BookPage() {
 
     const displayGenreName = () => {
         <DisplayGenres bookGenre={bookGenre}/>
-        console.log("Hey")
     }
 
     useEffect( () => {
@@ -66,7 +65,9 @@ function BookPage() {
                         <div className='genre'>
                             <h4>Genres:</h4>
                             <ul>
-                                {done && displayGenreName()}  
+                                {/* {done && displayGenreName()}  */}
+                                {/* {bookGenre.map(list => {return <li key={list._id}>{list.genre}</li>})} */}
+                                Coming soon
                             </ul>
                         </div>
                         <div className='author'>
