@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import DataContext from '../component/DataContext';
 import axios from 'axios';
-import BookInfo from '../component/BookInfo';
-import DisplayGenres from '../component/DisplayGenres';
 import AddToLibrary from '../component/AddToLibrary';
 
 function BookPage() {
@@ -13,7 +11,7 @@ function BookPage() {
     const [bookGenre, setBookGenre] = useState([])
     const [bookAuthor, setBookAuthor] = useState("")
     const [done, setDone] = useState(false)
-    const [ authorLoaded, setAuthorLoaded] = useState(false)
+    const [authorLoaded, setAuthorLoaded] = useState(false)
     const [genreLoaded, setGenreLoaded] = useState(false)
 
     const getGenresandAuthor = async () => {
@@ -29,16 +27,10 @@ function BookPage() {
         let genreNames = []
         currentBook.genre.forEach(genre => {
             const names = genres.filter(genreList => genreList._id === genre)
-            // console.log(names[0])  
             genreNames = [...genreNames, names[0]]
         })
-        // console.log(genreNames)
         setBookGenre(genreNames)
         setDone(true)
-    }
-
-    const displayGenreName = () => {
-        <DisplayGenres bookGenre={bookGenre}/>
     }
 
     useEffect( () => {
@@ -46,15 +38,10 @@ function BookPage() {
     }, [])
 
     useEffect( () => {
-        // console.log(genres)
         if(authorLoaded && genreLoaded){
             getGenreName()
         }
     }, [genres])
-
-    // useEffect( () => {
-    //     displayGenreName()
-    // }, [done])
 
     if(!done){
         return <div>Loading</div>
@@ -74,9 +61,7 @@ function BookPage() {
                         <div className='genre'>
                             <h4>Genres:</h4>
                             <ul>
-                                {/* {done && displayGenreName()}  */}
                                 {bookGenre && bookGenre.map(list => {return <li key={list._id}>{list.genre}</li>})}
-                                {/* Coming soon */}
                             </ul>
                         </div>
                         <div className='author'>
