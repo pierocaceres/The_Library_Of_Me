@@ -47,7 +47,7 @@ function Signin() {
     }
 
     return (
-        <div>
+        <div className='page-signin'>
             <div className='signin'>
                 Username: <input type="text" name="username" placeholder="Enter your username" value={username} onChange={(event) => handleUsername(event)}/>
                 <br/>
@@ -56,7 +56,7 @@ function Signin() {
             </div>
             <br/>
             {/* <button onClick={goToRegister}>Register</button> */}
-            <button onClick={confirmUser}>Sign in</button>            
+            <button className='button-signin' onClick={confirmUser}>Sign in</button>            
         </div>
     );
 }

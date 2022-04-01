@@ -53,7 +53,7 @@ function BookPage() {
     return (
         <div>
             <div className="book">
-            <h1> {currentBook.title} </h1>
+            <h2> {currentBook.title} </h2>
             <div className="info">
                 <div className='info-picture' >
                     <img src={currentBook.book_cover} alt="Book cover"/>
@@ -66,7 +66,7 @@ function BookPage() {
                             <h4>Genres:</h4>
                             <ul>
                                 {/* {done && displayGenreName()}  */}
-                                {/* {bookGenre.map(list => {return <li key={list._id}>{list.genre}</li>})} */}
+                                {/* {done && bookGenre.map(list => {return <li key={list._id}>{list.genre}</li>})} */}
                                 Coming soon
                             </ul>
                         </div>

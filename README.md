@@ -44,3 +44,8 @@ On this page you will find your books displayed that are currently in your libra
 ## Credit
 
 [CSS Styling for Buttons: Button 13, 45](https://getcssscan.com/css-buttons-examples)
+
+Classmates
+* David Wu - Provided help with the Backend
+* Tim Ellis - Provide JavaScript suggestions/idea
+* Yusong Shi - CSS Styling
