@@ -1,11 +1,17 @@
 # The Library Of Me
-###### Created by Piero Caceres
+###### Created by Piero Caceres | [LinkedIn](https://www.linkedin.com/in/pcace/)
 
 **Insert Picture of Homepage**
 
 ## Description
 
-This is an application for readers to keep track of books they currently own or have on their shelves. Users will be able to search for books by title, author, or genres.
+This is a website for readers to keep track of books they currently own or have on their shelves. Users will be able to add books by search for a book by title, author, or genres. React was use to create the front end of the website and MongoDB was used to create the database. These two components speak to each other via axios.
+
+## Getting Started
+
+Start keeping track of your library by [clicking here]().
+
+The progress of this project will be monitored using [Trello.](https://trello.com/b/WrVjH1Kw/the-library-of-me)
 
 ## Frontend
 
@@ -14,9 +20,6 @@ This is an application for readers to keep track of books they currently own or 
 ## Backend
 
 ![The Library of Me ERD](./assets/The_Library_Of_Me_ERD.jpg)
-
-## Development Progress
-The progress of this project will be monitored using [Trello.](https://trello.com/b/WrVjH1Kw/the-library-of-me)
 
 ## Features
 
