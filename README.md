@@ -10,7 +10,7 @@ This is a website for readers to keep track of books they currently own or have 
 
 ## Getting Started
 
-Start keeping track of your library by [clicking here]().
+Start keeping track of your library by [clicking here](https://cherry-pudding-94660.herokuapp.com/).
 
 The progress of this project will be monitored using [Trello.](https://trello.com/b/WrVjH1Kw/the-library-of-me)
 
