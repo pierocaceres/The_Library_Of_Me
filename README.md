@@ -14,14 +14,6 @@ Start keeping track of your library by [clicking here]().
 
 The progress of this project will be monitored using [Trello.](https://trello.com/b/WrVjH1Kw/the-library-of-me)
 
-## Frontend
-
-![The Library Of Me Component Hierarchy](./assets/Component_Hierarchy.jpg)
-
-## Backend
-
-![The Library of Me ERD](./assets/The_Library_Of_Me_ERD.jpg)
-
 ## Features
 
 ### Search
@@ -41,6 +33,20 @@ Each book has a short description with its genre and author. If the book peaks y
 On this page you will find your books displayed that are currently in your library. Want to donate your book? Do you want to give it to a friend? Did you just lose it somehow? No worries. If you no longer own the book, you can go ahead and remove it from your library.
 
 ![My library](./assets/my_library.gif)
+
+## Frontend
+
+![The Library Of Me Component Hierarchy](./assets/Component_Hierarchy.jpg)
+
+## Backend
+
+![The Library of Me ERD](./assets/The_Library_Of_Me_ERD.jpg)
+
+## Future Updates
+
+- [ ] Incorporate a more dynamic search functionality
+- [ ] Make it friednly with various screens
+- [ ] Use a 3rd party api to call a range of books
 
 ## Credit
 
