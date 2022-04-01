@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function Signin() {
 
-    const {BASE_URL, setSignin, setUser, user} = useContext(DataContext)
+    const {BASE_URL, setSignin, setUser} = useContext(DataContext)
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -42,9 +42,9 @@ function Signin() {
         }
     }
 
-    const goToRegister = () => {
-        navigate('/register')
-    }
+    // const goToRegister = () => {
+    //     navigate('/register')
+    // }
 
     return (
         <div className='page-signin'>

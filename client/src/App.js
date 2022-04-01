@@ -1,7 +1,6 @@
 import './style/App.css';
 import { Routes, Route } from 'react-router-dom'
-import { useEffect, useState, useContext } from 'react';
-import axios from 'axios'
+import { useState, useContext } from 'react';
 import DataContext from './component/DataContext'
 import Nav from './component/Nav'
 import Home from './page/Home'

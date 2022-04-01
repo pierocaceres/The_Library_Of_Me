@@ -12,7 +12,7 @@ function RemoveBook(props) {
     }
 
     const removeBookFromLibrary = async () => {    
-        await axios.post(`${BASE_URL}/library/deleteFromLibrary`, temp)
+        await axios.post(`${BASE_URL}/library/removeFromLibrary`, temp)
         const updatedUserInfo = await axios.get(`${BASE_URL}/users/${user._id}`)
         setUser(updatedUserInfo.data.users)
     }
