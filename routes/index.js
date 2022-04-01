@@ -16,9 +16,7 @@ router.get('/find/genres/:id', controllers.getGenreById)
 router.get('/find/author/:id', controllers.getAuthorById)
 
 router.post('/users/createUser', controllers.createUser)
-
 router.post('/library/addToLibrary', controllers.addToLibrary)
-
 router.post('/library/removeFromLibrary', controllers.removeFromLibrary)
 
 module.exports = router
