@@ -13,11 +13,15 @@ function BookPage() {
     const [bookGenre, setBookGenre] = useState([])
     const [bookAuthor, setBookAuthor] = useState("")
     const [done, setDone] = useState(false)
+    const [ authorLoaded, setAuthorLoaded] = useState(false)
+    const [genreLoaded, setGenreLoaded] = useState(false)
 
     const getGenresandAuthor = async () => {
         const getAuthor = await axios.get(`${BASE_URL}/find/author/${currentBook.author}`)
+        setAuthorLoaded(true)
         setBookAuthor(getAuthor.data.author.name)
         const allGenres = await axios.get(`${BASE_URL}/find/genres`)
+        setGenreLoaded(true)
         setGenres(allGenres.data.genres)
     }
 
@@ -43,13 +47,18 @@ function BookPage() {
 
     useEffect( () => {
         // console.log(genres)
-        getGenreName()
+        if(authorLoaded && genreLoaded){
+            getGenreName()
+        }
     }, [genres])
 
     // useEffect( () => {
     //     displayGenreName()
     // }, [done])
 
+    if(!done){
+        return <div>Loading</div>
+    }
     return (
         <div>
             <div className="book">
@@ -66,8 +75,8 @@ function BookPage() {
                             <h4>Genres:</h4>
                             <ul>
                                 {/* {done && displayGenreName()}  */}
-                                {/* {done && bookGenre.map(list => {return <li key={list._id}>{list.genre}</li>})} */}
-                                Coming soon
+                                {bookGenre && bookGenre.map(list => {return <li key={list._id}>{list.genre}</li>})}
+                                {/* Coming soon */}
                             </ul>
                         </div>
                         <div className='author'>

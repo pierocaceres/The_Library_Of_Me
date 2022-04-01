@@ -20,7 +20,13 @@ function App() {
   const [searchField, setSearchField] = useState("")
   const [results, setResults] = useState([])
   const [user, setUser] = useState([])
-  const [currentBook, setCurrentBook] = useState({})
+  const [currentBook, setCurrentBook] = useState({
+    title: "",
+    book_cover: "",
+    description: "",
+    genre: [],
+    author: ""
+  })
   
   return (
     <div className="App">
