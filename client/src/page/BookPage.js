@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import DataContext from '../component/DataContext';
 import axios from 'axios';
+import BookInfo from '../component/BookInfo';
+import DisplayGenres from '../component/DisplayGenres';
 import AddToLibrary from '../component/AddToLibrary';
 
 function BookPage() {
@@ -10,42 +12,48 @@ function BookPage() {
     const [genres, setGenres] = useState([])
     const [bookGenre, setBookGenre] = useState([])
     const [bookAuthor, setBookAuthor] = useState("")
-
-    let completedGet = false
-    let author = ""
+    const [done, setDone] = useState(false)
 
     const getGenresandAuthor = async () => {
-        console.log(currentBook.author)
         const getAuthor = await axios.get(`${BASE_URL}/find/author/${currentBook.author}`)
         setBookAuthor(getAuthor.data.author.name)
-        completedGet = true
-        // const allGenres = await axios.get(`${BASE_URL}/find/genres`)
-        // setGenres(allGenres.data.genres)
+        const allGenres = await axios.get(`${BASE_URL}/find/genres`)
+        setGenres(allGenres.data.genres)
     }
 
-    // const displayBooksGenres = async () => {
-    //     currentBook.genre.forEach(type => {
-    //         // console.log(type)
-    //        const genreType = genres.filter(genre => genre._id === type)
-    //        console.log(genreType)
-    //        setBookGenre(...bookGenre, genreType[0])
-    //     })
-        
-    //     console.log(bookGenre)
-    //     completedGet = true
-    // }
+    const getGenreName = () => {
+        let genreNames = []
+        currentBook.genre.forEach(genre => {
+            const names = genres.filter(genreList => genreList._id === genre)
+            // console.log(names[0])  
+            genreNames = [...genreNames, names[0]]
+        })
+        // console.log(genreNames)
+        setBookGenre(genreNames)
+        setDone(true)
+    }
+
+    const displayGenreName = () => {
+        <DisplayGenres bookGenre={bookGenre}/>
+        console.log("Hey")
+    }
 
     useEffect( () => {
-        getGenresandAuthor()       
+        getGenresandAuthor()      
     }, [])
 
     useEffect( () => {
         // console.log(genres)
-        // displayBooksGenres()
-    }, [author])
+        getGenreName()
+    }, [genres])
+
+    // useEffect( () => {
+    //     displayGenreName()
+    // }, [done])
 
     return (
-        <div className="book">
+        <div>
+            <div className="book">
             <h1> {currentBook.title} </h1>
             <div className="info">
                 <div className='info-picture' >
@@ -58,8 +66,7 @@ function BookPage() {
                         <div className='genre'>
                             <h4>Genres:</h4>
                             <ul>
-                                {/* {currentBook.genre.map(type => {return <li key={type}>{type}</li>})} */}
-                                <li>Placeholder</li>
+                                {done && displayGenreName()}  
                             </ul>
                         </div>
                         <div className='author'>
@@ -73,6 +80,7 @@ function BookPage() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
