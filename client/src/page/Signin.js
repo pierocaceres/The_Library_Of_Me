@@ -29,13 +29,10 @@ function Signin() {
             alert("Enter username and password")
         }else{
             if(foundUser){
-                console.log(`Username is a match`)
                 if(foundUser.password === password){
-                    console.log(`password is a match`)
                     setSignin(true)
                     setUser(foundUser)
                     navigate('/')
-                    console.log(user)
                 }else{
                     alert("incorrect password")
                 }

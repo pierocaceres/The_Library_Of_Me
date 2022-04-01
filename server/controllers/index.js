@@ -40,7 +40,7 @@ const getBookByAuthor = async (req, res) => {
 
 const getBookByGenre = async (req, res) => {
     try{
-        const genre = await Genre.find({type: req.params.genre})
+        const genre = await Genre.find({genre: req.params.genre})
         return res.status(200).json({genre})
     }catch (err){
         return res.status(500).send(err.message)

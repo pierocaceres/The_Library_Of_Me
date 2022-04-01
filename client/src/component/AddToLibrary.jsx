@@ -32,7 +32,7 @@ function AddToLibrary() {
 
     return (
         <div>
-            {!alreadyInLibrary && <button onClick={() => addBook()}>Add to Library</button>}
+            {!alreadyInLibrary && <button className="button-add" onClick={() => addBook()}>Add to Library</button>}
         </div>
     );
 }

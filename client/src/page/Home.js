@@ -11,10 +11,13 @@ function Home() {
     const {BASE_URL, search, results, setSearch, setCurrentBook} = useContext(DataContext)
 
     let navigate = useNavigate()
+    let searchClassName = "did-not-search"
 
     useEffect( () => {
         setSearch(false)
     }, [])
+
+    if(search){searchClassName = "did-search"}
 
     const selectedBook = async (id) => {
         const book = await axios.get(`${BASE_URL}/find/book/${id}`)
@@ -24,7 +27,9 @@ function Home() {
 
     return (
         <div>
-            <Search />
+            <div className={searchClassName}>
+                <Search />
+            </div>
             {search && <h3>Search Results</h3>}
             <div className="container-grid">
                 {search && results.map((result) => (

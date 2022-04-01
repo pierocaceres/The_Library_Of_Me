@@ -14,13 +14,13 @@ const main = async() => {
     const austen = await Author.find({name: "Jane Austen"})
     const lee = await Author.find({name: "Harper Lee"})
     
-    const fantasy = await Genre.find({type: "Fantasy"})
-    const horror = await Genre.find({type: "Horror"})
-    const romance = await Genre.find({type: "Romance"})
-    const youngAdult = await Genre.find({type: "Young adult"})
-    const scienceFiction =await Genre.find({type: "Science fiction"})
-    const mystery = await Genre.find({type: "Mystery & Thriller"})
-    const classic = await Genre.find({type: "Classics"})
+    const fantasy = await Genre.find({genre: "Fantasy"})
+    const horror = await Genre.find({genre: "Horror"})
+    const romance = await Genre.find({genre: "Romance"})
+    const youngAdult = await Genre.find({genre: "Young adult"})
+    const scienceFiction =await Genre.find({genre: "Science fiction"})
+    const mystery = await Genre.find({genre: "Mystery & Thriller"})
+    const classic = await Genre.find({genre: "Classics"})
 
     const books = [
         {

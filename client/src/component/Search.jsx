@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { DataContext } from './DataContext'
 import axios from 'axios';
 
 function Search() {
 
-    const {BASE_URL, searchField, setSearchField, setSearch, results, setResults} = useContext(DataContext)
+    const {BASE_URL, searchField, setSearchField, setSearch, setResults} = useContext(DataContext)
 
-    let radioOption = "Title"
+    const [radioOption, setRadioOption] = useState("Title")
 
     const getSearch = async () => {
         if (searchField !== '') {
@@ -23,31 +23,27 @@ function Search() {
 
                 setResults(bookByAuthor)
             }else if(radioOption === "Genre"){
-                // AXIOS call for Genre
                 const genreResult = await axios.get(`${BASE_URL}/find/book/genres/${searchField}`)
                 const bookResult = await axios.get(`${BASE_URL}/find`)
 
-                console.log(bookResult)
+                let genreBook = []
+                // For each book we check each Genre with the genre the user typed in. If we find it then save it to the array above which will be passed in line #37.
+                bookResult.data.books.forEach(book => {
+                    if(book.genre.includes(genreResult.data.genre[0]._id)){
+                        genreBook.push(book)
+                    }
+                })
 
-                // Loop through Genre of each book to see if it has the genre we are looking for
-
-                // const bookByGenre = bookResult.data.books.filter(result => genreResult.data.genre[0]._id === result.)
-
-                //setResults(bookByGenre)
+                setResults(genreBook)
             }
         }else if(searchField === ""){
             const result = await axios.get(`${BASE_URL}/find`)
             
-            setResults(results => result.data.books)
+            setResults(result.data.books)
             setSearch(true)
         }
 
         setSearchField("")
-        
-        // var ele = document.getElementsByName("search-type");
-        // for(var i=0;i<ele.length;i++){
-        //     ele[i].checked = false;
-        // }
     }
 
     const handleSearch = (event) => {
@@ -55,7 +51,7 @@ function Search() {
     }
 
     const handleRadio = (event) => {
-        radioOption = event.target.value
+        setRadioOption(event.target.value)
     }
 
     return (
