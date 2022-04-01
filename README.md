@@ -1,7 +1,8 @@
 # The Library Of Me
+
 ###### Created by Piero Caceres | [LinkedIn](https://www.linkedin.com/in/pcace/)
 
-**Insert Picture of Homepage**
+![Homepage](./assets/Homepage.jpg)
 
 ## Description
 
@@ -27,19 +28,19 @@ The progress of this project will be monitored using [Trello.](https://trello.co
 
 You can search the database for books via book title, authors, or genre.
 
-**Insert GIF of Feature**
+![Search for books](./assets/search.gif)
 
 ### Book Information
 
 Each book has a short description with its genre and author. If the book peaks your interest or you already own it, add it to your library.
 
-**Insert GIF of Feature** Add several book to the library, go to home page, click on library, display ibrary, then delete book.
+![Book info](./assets/book_info.gif)
 
 ### My Library
 
 On this page you will find your books displayed that are currently in your library. Want to donate your book? Do you want to give it to a friend? Did you just lose it somehow? No worries. If you no longer own the book, you can go ahead and remove it from your library.
 
-**Insert GIF of Feature**
+![My library](./assets/my_library.gif)
 
 ## Credit
 
