@@ -10,7 +10,8 @@ import Register from './page/Register';
 import BookPage from './page/BookPage';
 import MyLibrary from './page/MyLibrary';
 
-const BASE_URL = 'http://localhost:3001/api'
+// const BASE_URL = 'http://localhost:3001/api'
+const BASE_URL = '/api'
 
 function App() {
 
