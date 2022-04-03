@@ -45,7 +45,7 @@ On this page you will find your books displayed that are currently in your libra
 ## Future Updates
 
 - [ ] Incorporate a more dynamic search functionality
-- [ ] Make it friednly with various screens
+- [ ] Make it friendly with various screens
 - [ ] Use a 3rd party api to call a range of books
 
 ## Credit
