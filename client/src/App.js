@@ -11,7 +11,9 @@ import BookPage from './page/BookPage';
 import MyLibrary from './page/MyLibrary';
 
 // const BASE_URL = 'http://localhost:3001/api'
-const BASE_URL = '/api'
+// const BASE_URL = '/api'
+const BASE_URL = (process.env.REACT_APP_BACKEND === 'local') ? 'http://localhost:3001/api' : `${window.location.origin}/api`
+
 
 function App() {
 

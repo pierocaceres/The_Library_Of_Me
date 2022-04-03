@@ -13,8 +13,16 @@ function Search() {
             setSearch(true)
 
             if(radioOption === "Title"){
-                const result = await axios.get(`${BASE_URL}/find/book/title/${searchField}`)
-                setResults(result.data.books)
+                // const result = await axios.get(`${BASE_URL}/find/book/title/${searchField}`)
+                let books = []
+                const bookResult = await axios.get(`${BASE_URL}/find`)
+                bookResult.data.books.forEach(book => {
+                    if(book.title.toLowerCase().includes(searchField.toLowerCase())){
+                        books.push(book)
+                    }
+                })
+                setResults(books)
+                
             }else if(radioOption === "Author"){
                 const authorResult = await axios.get(`${BASE_URL}/find/book/author/${searchField}`)
                 const bookResult = await axios.get(`${BASE_URL}/find`)
