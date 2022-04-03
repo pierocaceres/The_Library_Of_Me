@@ -13,7 +13,6 @@ function Search() {
             setSearch(true)
 
             if(radioOption === "Title"){
-                // const result = await axios.get(`${BASE_URL}/find/book/title/${searchField}`)
                 let books = []
                 const bookResult = await axios.get(`${BASE_URL}/find`)
                 bookResult.data.books.forEach(book => {
