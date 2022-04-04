@@ -53,6 +53,7 @@ On this page you will find your books displayed that are currently in your libra
 ## Credit
 
 [CSS Styling for Buttons: Button 13, 45](https://getcssscan.com/css-buttons-examples)
+[Website color palette](https://www.codeofcolors.com/spring-colors.html)
 
 Classmates
 * Alex Barbosa - Provide JavaScript guard operator assistance
