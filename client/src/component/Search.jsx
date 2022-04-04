@@ -14,7 +14,7 @@ function Search() {
 
             if(radioOption === "Title"){
                 let books = []
-                const bookResult = await axios.get(`${BASE_URL}/find`)
+                const bookResult = await axios.get(`${BASE_URL}/find/books`)
                 bookResult.data.books.forEach(book => {
                     if(book.title.toLowerCase().includes(searchField.toLowerCase())){
                         books.push(book)
@@ -23,15 +23,28 @@ function Search() {
                 setResults(books)
                 
             }else if(radioOption === "Author"){
-                const authorResult = await axios.get(`${BASE_URL}/find/book/author/${searchField}`)
-                const bookResult = await axios.get(`${BASE_URL}/find`)
+                const authorResult = await axios.get(`${BASE_URL}/find/authors`)
+                const bookResult = await axios.get(`${BASE_URL}/find/books`)
 
-                const bookByAuthor = bookResult.data.books.filter(result => authorResult.data.author[0]._id === result.author)
+                let authorNames = []
+                authorResult.data.author.forEach(author => {
+                    if(author.name.toLowerCase().includes(searchField.toLowerCase())){
+                        authorNames.push(author)
+                    }
+                })
 
-                setResults(bookByAuthor)
+                let books = []
+                bookResult.data.books.forEach(book => {
+                    const bookAuthor = authorNames.filter(author => book.author === author._id)
+                    if(bookAuthor.length !== 0){
+                        books.push(book)
+                        console.log(book)
+                    }                        
+                })
+                setResults(books)
             }else if(radioOption === "Genre"){
                 const genreResult = await axios.get(`${BASE_URL}/find/book/genres/${searchField}`)
-                const bookResult = await axios.get(`${BASE_URL}/find`)
+                const bookResult = await axios.get(`${BASE_URL}/find/books`)
 
                 let genreBook = []
                 // For each book we check each Genre with the genre the user typed in. If we find it then save it to the array above which will be passed in line #37.
@@ -44,7 +57,7 @@ function Search() {
                 setResults(genreBook)
             }
         }else if(searchField === ""){
-            const result = await axios.get(`${BASE_URL}/find`)
+            const result = await axios.get(`${BASE_URL}/find/books`)
             
             setResults(result.data.books)
             setSearch(true)

@@ -9,6 +9,15 @@ const gettAllBooks = async (req, res) => {
     }
 }
 
+const getAllAuthors = async (req, res) => {
+    try{
+        const author = await Author.find()
+        return res.status(200).json({author})
+    }catch (err){
+        return res.status(500).send(err.message)
+    }
+}
+
 const getBookById = async (req, res) => {
     try{
         const book = await Book.findById(req.params.id)
@@ -122,6 +131,7 @@ const removeFromLibrary = async (req, res) => {
 
 module.exports = {
     gettAllBooks,
+    getAllAuthors,
     getBookById,
     getBookByTitle,
     getBookByAuthor,
