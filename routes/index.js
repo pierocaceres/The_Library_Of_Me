@@ -6,6 +6,7 @@ router.get('/', (req, res) => res.send('The Library of Me Landing page'))
 
 router.get('/find/books', controllers.gettAllBooks)
 router.get('/find/authors', controllers.getAllAuthors)
+router.get('/find/genres', controllers.getAllGenres)
 router.get('/find/book/:id', controllers.getBookById)
 router.get('/find/book/title/:title', controllers.getBookByTitle) /* No longer needed since we have a dynamic search bar*/
 router.get('/find/book/author/:author', controllers.getBookByAuthor)

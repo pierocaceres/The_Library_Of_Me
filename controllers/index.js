@@ -11,8 +11,17 @@ const gettAllBooks = async (req, res) => {
 
 const getAllAuthors = async (req, res) => {
     try{
-        const author = await Author.find()
-        return res.status(200).json({author})
+        const authors = await Author.find()
+        return res.status(200).json({authors})
+    }catch (err){
+        return res.status(500).send(err.message)
+    }
+}
+
+const getAllGenres = async (req, res) => {
+    try{
+        const genres = await Genre.find()
+        return res.status(200).json({genres})
     }catch (err){
         return res.status(500).send(err.message)
     }
@@ -132,6 +141,7 @@ const removeFromLibrary = async (req, res) => {
 module.exports = {
     gettAllBooks,
     getAllAuthors,
+    getAllGenres,
     getBookById,
     getBookByTitle,
     getBookByAuthor,
