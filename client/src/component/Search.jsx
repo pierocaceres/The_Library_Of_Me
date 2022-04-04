@@ -46,11 +46,17 @@ function Search() {
                 const bookResult = await axios.get(`${BASE_URL}/find/books`)
 
                 let genreNames = []
+
                 genreResult.data.genres.forEach(genre => {
                     if(genre.genre.toLowerCase().includes(searchField.toLowerCase())){
                         genreNames.push(genre)
                     }
                 })
+
+                if(searchField.toLowerCase() === 'fiction'){
+                    genreNames = genreNames.filter(genre => genre.genre.toLowerCase() !== 'nonfiction')
+                }
+
                 let books = []
                 bookResult.data.books.forEach(book => {
                     book.genre.forEach(individualGenre => {
