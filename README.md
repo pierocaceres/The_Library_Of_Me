@@ -44,7 +44,9 @@ On this page you will find your books displayed that are currently in your libra
 
 ## Future Updates
 
-- [ ] Incorporate a more dynamic search functionality
+- [x] Dynamic search functionality for title
+- [ ] Dynamic search functionality for author
+- [ ] Dynamic search functionality for genre
 - [ ] Make it friendly with various screens
 - [ ] Use a 3rd party api to call a range of books
 
